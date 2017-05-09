@@ -20,6 +20,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     @IBOutlet weak var uiLabel: UILabel!
     
+    @IBOutlet weak var progBar: UIProgressView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -73,6 +75,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.present(alert, animated: true) { 
             print("Present complete")
         }
+    }
+    
+    // Handles the slider changes 
+    // Associates the value of the progress bar to the slider value
+    @IBAction func didMoveSlider(_ sender: UISlider) {
+        progBar.progress = sender.value
     }
     
     override func didReceiveMemoryWarning() {
