@@ -55,6 +55,21 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
     }
     
+    @IBAction func showAlert(_ sender: Any) {
+        let alert: UIAlertController = UIAlertController(title: "Title", message: "This is an alert!", preferredStyle: .alert)
+        // actionSheet style shows the alert at the bottom of the screen
+        //let alert: UIAlertController = UIAlertController(title: "Title", message: "This is an alert!", preferredStyle: .actionSheet)
+
+        let action1: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { (_: UIAlertAction) in
+            print("Cancelled!")
+        }
+        alert.addAction(action1)
+    
+        self.present(alert, animated: true) { 
+            print("Present complete")
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
