@@ -46,6 +46,9 @@
                             <constraint firstItem="fmU-IQ-eRU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="uSw-1A-SXQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="uiLabel" destination="1Kq-h8-Tu5" id="Vj8-CU-uzi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
