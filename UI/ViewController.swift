@@ -80,7 +80,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     // Handles the slider changes 
     // Associates the value of the progress bar to the slider value
     @IBAction func didMoveSlider(_ sender: UISlider) {
-        progBar.progress = sender.value
+        // Corrects the progBar values when slider's min value is != 0
+        let percent: Float = (sender.value - sender.minimumValue) / (sender.maximumValue - sender.minimumValue)
+        progBar.progress = percent
     }
     
     override func didReceiveMemoryWarning() {
