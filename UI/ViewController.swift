@@ -15,11 +15,21 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         ["C1", "C2", "C3"]
     ]
     
+    var codeLabel: UILabel = UILabel(frame: CGRect(x: 20, y: 300, width: 200, height: 40))
+    var codeButton: UIButton = UIButton(frame: CGRect(x: 230, y: 300, width: 150, height: 40))
+    
     @IBOutlet weak var uiLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        codeLabel.text = "From Code!"
+        view.addSubview(codeLabel)
+        
+        codeButton.setTitle("Code Button", for: .normal)
+        codeButton.backgroundColor = UIColor.darkGray
+        view.addSubview(codeButton)
+        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -36,13 +46,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         uiLabel.text = items[component][row]
-    }   
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 
