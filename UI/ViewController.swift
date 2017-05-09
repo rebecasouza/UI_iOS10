@@ -28,8 +28,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         codeButton.setTitle("Code Button", for: .normal)
         codeButton.backgroundColor = UIColor.darkGray
+        // Associates the codeButton to the method didClick( from code)
+        codeButton.addTarget(self, action: #selector(didClick), for: .touchUpInside)
         view.addSubview(codeButton)
-        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -46,6 +47,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         uiLabel.text = items[component][row]
+    }
+    
+    // Changes the codeLabel text
+    func didClick() {
+        codeLabel.text = "Changed through code"
+        
     }
     
     override func didReceiveMemoryWarning() {
