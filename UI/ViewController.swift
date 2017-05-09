@@ -63,8 +63,13 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         let action1: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { (_: UIAlertAction) in
             print("Cancelled!")
         }
+        // Adds a delete action to the alert 
+        let action2: UIAlertAction = UIAlertAction(title: "Delete", style: .destructive) { (_: UIAlertAction) in
+            print("You've deleted stuff")
+        }
+        
         alert.addAction(action1)
-    
+        alert.addAction(action2)
         self.present(alert, animated: true) { 
             print("Present complete")
         }
