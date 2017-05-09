@@ -15,22 +15,29 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         ["C1", "C2", "C3"]
     ]
     
+    @IBOutlet weak var uiLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        
+        return items.count
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        <#code#>
+        return items[component].count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return items[component][row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        <#code#>
-    }
+        uiLabel.text = items[component][row]
+    }   
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
