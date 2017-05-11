@@ -24,6 +24,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     @IBOutlet weak var myIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var segLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -95,6 +97,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         else {
             myIndicator.stopAnimating()
         }
+    }
+    
+    
+    @IBAction func segmentDidChange(_ sender: UISegmentedControl) {
+        let selectedSegment: Int = sender.selectedSegmentIndex
+        segLabel.text = sender.titleForSegment(at: selectedSegment)
     }
     
     override func didReceiveMemoryWarning() {
