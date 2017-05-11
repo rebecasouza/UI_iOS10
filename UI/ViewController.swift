@@ -22,6 +22,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     @IBOutlet weak var progBar: UIProgressView!
     
+    @IBOutlet weak var myIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -85,10 +87,20 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         progBar.progress = percent
     }
     
+    @IBAction func switchDidChange(_ sender: UISwitch) {
+        if sender.isOn {
+            myIndicator.startAnimating()
+            
+        }
+        else {
+            myIndicator.stopAnimating()
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 }
 
