@@ -15,8 +15,15 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         ["C1", "C2", "C3"]
     ]
     
-    var codeLabel: UILabel = UILabel(frame: CGRect(x: 20, y: 300, width: 200, height: 40))
-    var codeButton: UIButton = UIButton(frame: CGRect(x: 230, y: 300, width: 150, height: 40))
+    let imageList: [UIImage] = [
+        UIImage(named: "1.jpg")!,
+        UIImage(named: "2.jpg")!,
+        UIImage(named: "3.jpg")!,
+        UIImage(named: "4.jpg")!
+    ]
+    
+    var codeLabel: UILabel = UILabel(frame: CGRect(x: 20, y: 280, width: 200, height: 40))
+    var codeButton: UIButton = UIButton(frame: CGRect(x: 230, y: 280, width: 150, height: 40))
     
     @IBOutlet weak var uiLabel: UILabel!
     
@@ -25,6 +32,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var myIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var segLabel: UILabel!
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +48,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         // Associates the codeButton to the method didClick( from code)
         codeButton.addTarget(self, action: #selector(didClick), for: .touchUpInside)
         view.addSubview(codeButton)
+        imageView.image = imageList[0]
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -103,6 +115,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBAction func segmentDidChange(_ sender: UISegmentedControl) {
         let selectedSegment: Int = sender.selectedSegmentIndex
         segLabel.text = sender.titleForSegment(at: selectedSegment)
+        imageView.image = imageList[selectedSegment]
+        
     }
     
     override func didReceiveMemoryWarning() {

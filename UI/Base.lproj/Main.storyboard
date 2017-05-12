@@ -22,21 +22,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fmU-IQ-eRU">
-                                <rect key="frame" x="0.0" y="20" width="375" height="216"/>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fmU-IQ-eRU">
+                                <rect key="frame" x="0.0" y="20" width="375" height="199"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="rJG-1B-A8w"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Qay-TR-AwW"/>
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kq-h8-Tu5" userLabel="uiLabel">
-                                <rect key="frame" x="53" y="236" width="268" height="33"/>
+                                <rect key="frame" x="53" y="221" width="268" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdu-zc-GRW">
-                                <rect key="frame" x="16" y="374" width="84" height="30"/>
+                                <rect key="frame" x="16" y="347" width="84" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Show Alert"/>
                                 <connections>
@@ -44,30 +44,30 @@
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.0" maxValue="12" translatesAutoresizingMaskIntoConstraints="NO" id="SOW-fV-jl0">
-                                <rect key="frame" x="128" y="374" width="233" height="31"/>
+                                <rect key="frame" x="128" y="347" width="233" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didMoveSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="TEe-Ic-S7e"/>
                                 </connections>
                             </slider>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QlI-AB-6F4">
-                                <rect key="frame" x="130" y="432" width="229" height="2"/>
+                                <rect key="frame" x="130" y="405" width="229" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wcT-E3-Mxt">
-                                <rect key="frame" x="60" y="418" width="51" height="31"/>
+                                <rect key="frame" x="60" y="391" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="switchDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="piU-l9-P0j"/>
                                 </connections>
                             </switch>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="SNp-Wp-gsQ">
-                                <rect key="frame" x="13" y="415" width="37" height="37"/>
+                                <rect key="frame" x="13" y="388" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="N5r-Sh-fsh">
-                                <rect key="frame" x="13" y="460" width="346" height="29"/>
+                                <rect key="frame" x="16" y="433" width="346" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="First"/>
@@ -80,12 +80,16 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkx-YP-A4r">
-                                <rect key="frame" x="13" y="496" width="346" height="28"/>
+                                <rect key="frame" x="16" y="469" width="346" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="18337431_1750104125009869_347870611_n" translatesAutoresizingMaskIntoConstraints="NO" id="zHj-jZ-Cw3">
+                                <rect key="frame" x="48" y="493" width="292" height="166"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -98,6 +102,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="zHj-jZ-Cw3" id="asF-MZ-Wdk"/>
                         <outlet property="myIndicator" destination="SNp-Wp-gsQ" id="wUm-fr-sIG"/>
                         <outlet property="progBar" destination="QlI-AB-6F4" id="x9M-vq-0ia"/>
                         <outlet property="segLabel" destination="kkx-YP-A4r" id="Eac-st-A7Q"/>
@@ -109,4 +114,7 @@
             <point key="canvasLocation" x="408.80000000000001" y="126.38680659670166"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="18337431_1750104125009869_347870611_n" width="960" height="720"/>
+    </resources>
 </document>
